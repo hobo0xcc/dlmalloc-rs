@@ -71,7 +71,7 @@ pub unsafe trait Allocator: Send {
 /// Instances of this type are used to allocate blocks of memory. For best
 /// results only use one of these. Currently doesn't implement `Drop` to release
 /// lingering memory back to the OS. That may happen eventually though!
-pub struct Dlmalloc<A = System>(dlmalloc::Dlmalloc<A>);
+pub struct Dlmalloc<A>(dlmalloc::Dlmalloc<A>);
 
 #[cfg(target_family = "wasm")]
 #[path = "wasm.rs"]
